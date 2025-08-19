@@ -1,0 +1,10 @@
+#title{
+    text-align: center;
+}
+.section-input{
+    text-align: center;
+}
+.section-weather-listing{
+    display: flex;
+    flex-wrap: wrap;
+}
