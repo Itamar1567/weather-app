@@ -36,7 +36,7 @@ frontend/.sass-cache/
 /libpeerconnection.log
 testem.log
 /typings
-.env
+**.env
 
 # System files
 .DS_Store

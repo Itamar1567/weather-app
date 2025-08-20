@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -9,9 +9,9 @@ import { RouterModule } from '@angular/router';
     <div class="layout">
       <ul class="layout-links">
         <li><img src="assets/images/logo.png" alt="Logo" id="logo"></li>
-        <li><button mat-flat-button>Home</button></li>
+        <li><button mat-flat-button (click)="moveToHomePage()">Home</button></li>
         <li><button mat-flat-button>About</button></li>
-        <li><button mat-flat-button>Weather</button></li>
+        <li><button mat-flat-button (click)="moveToCurrentWeatherPage()">Current Weather</button></li>
       </ul>
     </div>
     <main><router-outlet></router-outlet></main>
@@ -21,5 +21,19 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./layout.css']
 })
 export class LayoutComponent {
+
+  router: Router = inject(Router);
+
+  moveToCurrentWeatherPage(){
+    
+    this.router.navigateByUrl("current");
+
+  }   
+   moveToHomePage(){
+    
+    this.router.navigateByUrl("");
+
+  }   
+
 
 }

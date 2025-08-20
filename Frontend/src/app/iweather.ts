@@ -3,4 +3,10 @@ export interface IWeather {
     temperature: number;
     windSpeed: number;
     dayType: string;
+    dayImg?: string;
+    city?: string;
+    feelsLike?: number;
+    humidity?: number;
+    pressure?: number;
+
 }

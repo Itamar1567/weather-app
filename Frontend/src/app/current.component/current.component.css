@@ -1,0 +1,24 @@
+#title{
+   margin: 1rem;
+}
+#weather-image{
+    width: 1350px;
+    height: 650px;
+}
+.section-title{
+    text-align: center;
+}
+.section-showcase
+{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.section-images{
+    position: absolute;
+    display: flex;
+    bottom: 300px;
+    justify-content: center;
+
+}
