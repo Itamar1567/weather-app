@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     <section class="section-title">
       <header><h1 id="title">Current Weather</h1></header>
       <input placeholder="Enter city name" type="text" (keydown.enter)="onEnter()" [(ngModel)]="city"/>
-      <p>Message</p>
+      <p>{{message}}</p>
     </section>
     <section class="section-showcase">
       <img alt="day-type-img" src="assets/images/rainy.png" id="weather-image" />
@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 export class CurrentComponent {
 
   city:string = '';
+  message:string = '';
   weatherService: WeatherService = inject(WeatherService);
   //temp array for testing
   weatherArray: IWeather[] = []; 
@@ -39,11 +40,16 @@ export class CurrentComponent {
    
     this.weatherArray = [];
 
-    const weatherData: IWeather = await this.weatherService.getWeatherForSingleDayByCity(this.city);
+    const weatherData = await this.weatherService.getWeatherForSingleDayByCity(this.city);
 
-    if(weatherData)
+    if(weatherData == null)
+    {
+      this.message = 'Could not find provided city';
+    }
+    else
     {
       this.weatherArray.push(await this.weatherService.getWeatherForSingleDayByCity(this.city));
+      this.message = '';
     }
     
 
