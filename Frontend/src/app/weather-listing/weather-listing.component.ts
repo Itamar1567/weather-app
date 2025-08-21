@@ -10,8 +10,9 @@ import { IWeather } from '../iweather';
         <img [src]="weatherData.dayImg" id="weather-image" alt="weather-img" />
         <div class="img-text-overlay" alt="Day image">
             <h2>{{weatherData.dayType}}</h2>
+            <h1> {{weatherData.day}} </h1>
             <h1>Temperature: {{weatherData.temperature}}</h1>
-            <h1>Wind: {{weatherData.windSpeed}}</h1>
+            <h1>Wind: {{weatherData.windSpeed}} </h1>
         </div>
       </div>
     </section>

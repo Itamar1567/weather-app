@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IWeather } from '../iweather';
 
+// Use  the 5-3 weather api for daily reports
 @Component({
   selector: 'app-current-weather-listing',
   imports: [],
@@ -11,11 +12,11 @@ import { IWeather } from '../iweather';
         <div class="img-text-overlay" alt="Day image">
             <h2>{{weatherData.dayType}}</h2>
             <h1>City: {{weatherData.city}}</h1>
-            <h1>Temperature: {{weatherData.temperature}}</h1>
-            <h1>Feels like: {{weatherData.feelsLike}}</h1>
-            <h1>Wind Speed: {{weatherData.windSpeed}}</h1>
-            <h1>Humidity: {{weatherData.humidity}}</h1>
-            <h1>Pressure: {{weatherData.pressure}}</h1>
+            <h1>Temperature: {{weatherData.temperature}}C</h1>
+            <h1>Feels like: {{weatherData.feelsLike}}C</h1>
+            <h1>Wind Speed: {{weatherData.windSpeed}}m/s</h1>
+            <h1>Humidity: {{weatherData.humidity}}%</h1>
+            <h1>Pressure: {{weatherData.pressure}}hPa</h1>
         </div>
       </div>
     </section>

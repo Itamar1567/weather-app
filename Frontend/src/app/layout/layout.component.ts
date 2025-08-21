@@ -10,7 +10,6 @@ import { RouterModule, Router } from '@angular/router';
       <ul class="layout-links">
         <li><img src="assets/images/logo.png" alt="Logo" id="logo"></li>
         <li><button mat-flat-button (click)="moveToHomePage()">Home</button></li>
-        <li><button mat-flat-button>About</button></li>
         <li><button mat-flat-button (click)="moveToCurrentWeatherPage()">Current Weather</button></li>
       </ul>
     </div>

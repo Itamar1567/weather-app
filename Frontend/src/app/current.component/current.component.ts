@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IWeather } from '../iweather';
 import { CurrentWeatherListingComponent } from '../current-weather-listing.component/current-weather-listing.component';
@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
       <p>{{message}}</p>
     </section>
     <section class="section-showcase">
-      <img alt="day-type-img" src="assets/images/rainy.png" id="weather-image" />
+      <img alt="day-type-img" src="assets/images/rain.png" id="weather-image" />
       <section class="section-images">
         <app-current-weather-listing
           *ngFor="let weatherListing of weatherArray"
@@ -32,6 +32,7 @@ export class CurrentComponent {
   city:string = '';
   message:string = '';
   weatherService: WeatherService = inject(WeatherService);
+  private detector: ChangeDetectorRef = inject(ChangeDetectorRef);
   //temp array for testing
   weatherArray: IWeather[] = []; 
 
@@ -51,8 +52,9 @@ export class CurrentComponent {
       this.weatherArray.push(await this.weatherService.getWeatherForSingleDayByCity(this.city));
       this.message = '';
     }
-    
 
+     this.detector.detectChanges();
+    
   }
   
 }

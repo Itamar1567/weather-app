@@ -32,7 +32,6 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-
 //Inorder to store secret api keys
 //Run CMD(dotnet user-secrets init)
 //Run CMD(dotnet user-secrets set "keyfindername:Key" "keyname")
@@ -81,8 +80,38 @@ app.MapGet("/weather/{city}", async (string city, IHttpClientFactory httpClientF
 
     }
 
+});
+
+app.MapGet("/forecast/{city}", async (string city, IHttpClientFactory httpClientFactory) =>
+{
+
+    if (openWeatherKey == null)
+    {
+        Console.WriteLine("Did not find api key");
+        return Results.NotFound();
+    }
+    else
+    {
+        Console.WriteLine(city);
+        var url = $"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={openWeatherKey}&units=metric";
+
+        var client = httpClientFactory.CreateClient();
+
+        try
+        {
+            var response = await client.GetFromJsonAsync<object>(url);
+            return Results.Ok(response);
+        }
+        catch
+        {
+            Console.WriteLine("Could not find provided city name");
+            return Results.NotFound();
+        }
+
+
+    }
 
 });
 
-
+//Ussually running on port 5121
 app.Run();

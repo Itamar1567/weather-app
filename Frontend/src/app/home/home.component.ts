@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef} from '@angular/core';
 import { WeatherListingComponent } from '../weather-listing/weather-listing.component';
 import { IWeather } from '../iweather';
 import { CommonModule } from '@angular/common';
@@ -35,47 +35,35 @@ import { FormsModule } from '@angular/forms';
 export class HomeComponent {
   weatherService: WeatherService = inject(WeatherService);
 
+  weatherArray: IWeather[] = [];
+  private detector: ChangeDetectorRef = inject(ChangeDetectorRef);
+
+  dity:number = 1756177200;
+  date: Date = new Date(this.dity * 1000);
+
   city: string = '';
   message: string = '';
 
   async onEnter(): Promise<void> {
     console.log(this.city);
-    const response = await this.weatherService.getWeatherForCity(this.city);
+    const response = await this.weatherService.getFiveDayWeatherForCity(this.city);
 
     if(response == null)
     {
       console.log("fetch returned empty handed/null")
-        this.message = "Could not find provided city";
+      this.message = "Could not find provided city";
+      this.weatherArray = [];
+
     }
     else
     {
-      console.log(response);
+      this.weatherArray = response;
       this.message = "";
     }
+
+    this.detector.detectChanges();
   }
 
-  //temp array for testing
-  weatherArray: IWeather[] = [
-    {
-      id: 0,
-      temperature: 30,
-      windSpeed: 100,
-      dayType: 'Sunny',
-      dayImg: `assets/images/sunny.png`,
-    },
-    {
-      id: 1,
-      temperature: 20,
-      windSpeed: 500,
-      dayType: 'Windy',
-      dayImg: `assets/images/windy.png`,
-    },
-    {
-      id: 2,
-      temperature: 9,
-      windSpeed: 9000,
-      dayType: 'Rainy',
-      dayImg: `assets/images/rainy.png`,
-    },
-  ];
+
+  
 }

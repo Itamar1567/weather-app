@@ -5,6 +5,7 @@
     text-align: center;
 }
 .section-weather-listing{
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
 }
