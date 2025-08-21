@@ -86,7 +86,7 @@ export class WeatherService {
             temperature: this.getAverage(tempSum, ttlCount) + "C",
             windSpeed: this.getAverage(windSum, ttlCount) + "m/s",
             dayType: data.list[i].weather[0].main,
-            dayImg: `assets/images/${(data.list[i].weather[0].main).toLowerCase()}.png`,
+            dayImg: `assets/images/${(data.list[i].weather[0].main).toLowerCase()}.png` || "blank.png",
             day: this.days[date.getDay()]
           });
 

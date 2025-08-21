@@ -1,0 +1,9 @@
+[build]
+  base = "Frontend"
+  command = "ng build --configuration production"
+  publish = "dist/weather-app"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
