@@ -1,7 +1,7 @@
 [build]
   base = "Frontend"
   command = "ng build --configuration production"
-  publish = "dist/weather-app"
+  publish = "dist/weather_app"
 
 [[redirects]]
   from = "/*"
