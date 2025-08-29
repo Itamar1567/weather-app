@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\backend\\Backend.csproj": {}
+    "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\backend\\Backend.csproj": {
+    "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\backend\\Backend.csproj",
+        "projectPath": "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\itama\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\backend\\obj\\",
+        "outputPath": "C:\\Users\\itama\\Desktop\\WeatherApp\\Weather_App\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
