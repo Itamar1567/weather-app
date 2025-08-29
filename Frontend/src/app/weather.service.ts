@@ -6,10 +6,12 @@ import { IWeather } from './iweather';
 })
 export class WeatherService {
 
-  days: string[] = ["Sunday","Monday", "Tuesday", "Wedensday", "Thursday", "Friday", "Saturday" ];
+  backendUrl: string = "http://weather-app-backend-edh2fbaqavfcagad.canadacentral-01.azurewebsites.net";
+  days: string[] = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+
   async getWeatherForCity(city: string): Promise<any> {
     try {
-      const response = await fetch(`http://localhost:5121/weather/${city}`);
+      const response = await fetch(`${this.backendUrl}/weather/${city}`);
       if (!response.ok) {
         console.log('Entered !response');
         console.log('Could not fetch: ', response.status, response.statusText);
@@ -25,7 +27,7 @@ export class WeatherService {
 
   async getForecastForCity(city: string): Promise<any> {
     try {
-      const response = await fetch(`http://localhost:5121/forecast/${city}`);
+      const response = await fetch(`${this.backendUrl}/forecast/${city}`);
       if (!response.ok) {
         console.log('Entered !response');
         console.log('Could not fetch: ', response.status, response.statusText);
