@@ -1,10 +1,3 @@
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors.Infrastructure;
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 //Desired policy name
@@ -14,7 +7,7 @@ builder.Services.AddCors(options => options.AddPolicy(name: corsPolicy,
 
     policy =>
     {
-        policy.WithOrigins("http://localhost:4200");
+        policy.WithOrigins("https://weather-app-ib.netlify.app");
         policy.AllowAnyHeader();
         policy.AllowAnyMethod();
 

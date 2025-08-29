@@ -12,7 +12,7 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("3f6736e8-ee1d-4002-9d91-7049bf47b06a")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backend")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52da19703085c14c3fdc4cbe6ec8db7ffd68d24a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Backend")]

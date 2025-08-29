@@ -1,0 +1,9 @@
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Backend.exe
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\appsettings.Development.json
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\appsettings.json
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Backend.dll
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Backend.deps.json
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Backend.runtimeconfig.json
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Backend.pdb
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\itama\Desktop\WeatherApp\Weather_App\backend\publish\Microsoft.OpenApi.dll
