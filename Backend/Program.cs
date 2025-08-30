@@ -1,8 +1,11 @@
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Desired policy name
 var corsPolicy = "_myCorsPolicty";
 //Create CORS policy
+
 builder.Services.AddCors(options => options.AddPolicy(name: corsPolicy,
 
     policy =>
@@ -25,12 +28,21 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+
 //Inorder to store secret api keys
 //Run CMD(dotnet user-secrets init)
 //Run CMD(dotnet user-secrets set "keyfindername:Key" "keyname")
-var openWeatherKey = builder.Configuration["OpenWeather:Key"];
+var openWeatherKey = builder.Configuration["OpenWeather__Key"];
 
-
+if (openWeatherKey == null)
+{
+    logger.LogInformation("Null");
+}
+else
+{
+    logger.LogInformation("Found");
+}
 
 app.UseHttpsRedirection();
 app.UseRouting();

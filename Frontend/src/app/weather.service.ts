@@ -6,7 +6,7 @@ import { IWeather } from './iweather';
 })
 export class WeatherService {
 
-  backendUrl: string = "http://weather-app-backend-edh2fbaqavfcagad.canadacentral-01.azurewebsites.net";
+  backendUrl: string = "https://weather-app-backend-edh2fbaqavfcagad.canadacentral-01.azurewebsites.net";
   days: string[] = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
 
   async getWeatherForCity(city: string): Promise<any> {
